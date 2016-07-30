@@ -1,0 +1,19 @@
+{
+  "name": "beapi/wp-cli-light-db-export",
+  "description": "Database export",
+  "homepage": "https://github.com/beapi/wp-cli-light-db-export",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4"
+  },
+  "authors": [
+    {
+      "name": "Nicolas JUEN",
+      "email": "njuen@beapi.fr"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "files": [ "command.php" ]
+  },
+}

@@ -17,3 +17,6 @@ By default it ignores tables :
 `wp light_db export export.sql --tables-to-filter=postmeta,posts`
 
 With this command will export all the data from your database but no data from all databases postmeta or posts even with the prefixes
+
+## Credits
+Based on https://github.com/petenelson/wp-cli-size for the table size and row count
