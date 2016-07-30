@@ -4,5 +4,5 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 }
 define( 'WP_CLI_LIGHT_DB_EXPORT', dirname( __FILE__ ) );
 
-require_once WP_CLI_LIGHT_DB_EXPORT . '/src/class-wp-cli-size-base-command.php';
-require_once WP_CLI_LIGHT_DB_EXPORT . '/src/class-wp-cli-size-command.php';
+require_once WP_CLI_LIGHT_DB_EXPORT . '/src/wp-cli-light-db-export-base.php';
+require_once WP_CLI_LIGHT_DB_EXPORT . '/src/wp-cli-light-db-export.php';
