@@ -19,6 +19,12 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		// WSAL
 		'wsal_metadata',
 		'wsal_occurrences',
+		
+		// Relevanssi LOG
+		'relevanssi_log'
+		
+		// Audit Trail
+		'audit_trail'
 	];
 
 	/**
