@@ -1,6 +1,7 @@
 {
   "name": "beapi/wp-cli-light-db-export",
   "description": "Database export",
+  "type": "wp-cli-package",
   "homepage": "https://github.com/beapi/wp-cli-light-db-export",
   "license": "MIT",
   "require": {
