@@ -6,7 +6,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *
 	 **/
 	private $tables_to_filter = [
-		// Search WP LOG
+		// SearchWP LOG
 		'swp_log',
 
 		// Redirect LOG and redirection 404
@@ -21,7 +21,28 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'wsal_occurrences',
 		
 		// Relevanssi LOG
-		'relevanssi_log'
+		'relevanssi_log',
+		
+		// Log HTTP requests
+		'lhr_log',
+		
+		// WP mail log
+		'wml_entries',
+		
+		// WP Mail Logging
+		'wpml_mails', 
+		
+		// Broken Link Checkers
+		"blc_linkdata",
+		"blc_postdata",
+		"blc_instances",
+		"blc_links",
+		"blc_synch",
+		"blc_filters",
+		
+		// Stream
+		'stream',
+		'stream_meta',
 		
 		// Audit Trail
 		'audit_trail'
