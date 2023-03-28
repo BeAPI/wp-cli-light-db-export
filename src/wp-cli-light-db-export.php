@@ -6,7 +6,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *
 	 **/
 	private $tables_to_filter = [
-		// Search WP LOG
+		// SearchWP LOG
 		'swp_log',
 
 		// Redirect LOG and redirection 404
@@ -19,10 +19,31 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		// WSAL
 		'wsal_metadata',
 		'wsal_occurrences',
-		
+
 		// Relevanssi LOG
-		'relevanssi_log'
-		
+		'relevanssi_log',
+
+		// Log HTTP requests
+		'lhr_log',
+
+		// WP mail log
+		'wml_entries',
+
+		// WP Mail Logging
+		'wpml_mails',
+
+		// Broken Link Checkers
+		'blc_linkdata',
+		'blc_postdata',
+		'blc_instances',
+		'blc_links',
+		'blc_synch',
+		'blc_filters',
+
+		// Stream
+		'stream',
+		'stream_meta',
+
 		// Audit Trail
 		'audit_trail'
 	];
@@ -50,11 +71,13 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 */
 	function export( $positional_args, $assoc_args = [] ) {
 		global $wpdb;
+
 		$database_name = $wpdb->dbname;
+
 		/**
 		 * Filename to export, database name by default
 		 */
-		$file          = sanitize_file_name( empty( $positional_args[0] ) ? $database_name . '.sql' : $positional_args[0] );
+		$file = sanitize_file_name( empty( $positional_args[0] ) ? $database_name . '.sql' : $positional_args[0] );
 
 		/**
 		 * Get the list of tables with no-data
@@ -79,7 +102,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		$total_of_lines = 0;
 
 		foreach ( $no_data_tables as $table_name ) {
-			$total_size += $this->get_table_size( $database_name, $table_name );
+			$total_size     += $this->get_table_size( $database_name, $table_name );
 			$total_of_lines += $this->get_row_count( $database_name, $table_name );
 		}
 
@@ -90,15 +113,15 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		WP_CLI::log( 'Export the data tables' );
 		WP_CLI::launch_self( sprintf( 'db export - >> %s --tables=%s', $file, implode( ',', $table_names ) ) );
 		WP_CLI::success( 'Export done' );
-
 	}
 
 	/**
 	 * Get all the tables with the assoc_args
 	 *
+	 * @return array
+	 *
 	 * @param $args
 	 *
-	 * @return array
 	 */
 	private function get_tables_to_filter( $args ) {
 		if ( isset( $args['tables-to-filter'] ) ) {
@@ -111,9 +134,10 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	/**
 	 * Extract the tables with no-data from the array
 	 *
+	 * @return bool
+	 *
 	 * @param $table
 	 *
-	 * @return bool
 	 */
 	private function extract_no_data_tables( $table ) {
 		foreach ( $this->tables_to_filter as $filter ) {
@@ -128,10 +152,11 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	/**
 	 * Get the table size
 	 *
-	 * @param $database_name
+	 * @return mixed
+	 *
 	 * @param $table_name
 	 *
-	 * @return mixed
+	 * @param $database_name
 	 */
 	private function get_table_size( $database_name, $table_name ) {
 		global $wpdb;
@@ -148,10 +173,11 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	/**
 	 * Get the row count for the table
 	 *
-	 * @param $database_name
+	 * @return mixed
+	 *
 	 * @param $table_name
 	 *
-	 * @return mixed
+	 * @param $database_name
 	 */
 	private function get_row_count( $database_name, $table_name ) {
 		global $wpdb;
@@ -162,4 +188,4 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	}
 }
 
-WP_CLI::add_command( 'ligth_db', 'WP_CLI_DB_Light_Export' );
+WP_CLI::add_command( 'light_db', 'WP_CLI_DB_Light_Export' );
