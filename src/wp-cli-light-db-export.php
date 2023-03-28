@@ -6,9 +6,14 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *
 	 **/
 	private $tables_to_filter = [
-		// SearchWP LOG
+		// SearchWP 3.x
 		'swp_log',
-
+		'swp_index',
+		
+		// SearchWP 4.x
+		'searchwp_index',
+		'searchwp_log',
+		
 		// Redirect LOG and redirection 404
 		'redirection_logs',
 		'redirection_404',
