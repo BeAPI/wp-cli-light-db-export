@@ -7,14 +7,15 @@ Allows you to export big databases with all the tables but not all the data.
 Sometimes you need the structure and not the data like log tables or tracking tables.
 
 By default, it ignores tables for theses plugins :
-* Broken link checker
+* Broken Link Checker
 * Redirection
-* SearchWP
-* Steam
+* SearchWP 3.x & 4.x
+* Stream
 * Log HTTP requests
 * WP Security Audit Log
 * WP Mail Log
 * WP Mail Logging
+* WPcerber
 * Yop Polls
 
 ## Installing
