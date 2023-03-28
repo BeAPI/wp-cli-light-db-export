@@ -17,6 +17,12 @@ By default, it ignores tables for theses plugins :
 * WP Mail Logging
 * Yop Polls
 
+## Installing
+
+Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
+
+Once you've done so, you can install this package with `wp package install BeAPI/wp-cli-light-db-export`
+
 ## Usage
 
 Export all without plugins data tables :
