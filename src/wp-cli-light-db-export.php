@@ -73,11 +73,9 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *     wp light_db export export.sql --tables-to-filter=postmeta,posts
 	 *     wp light_db export export.sql
 	 *
-	 * @subcommand tables db
-	 *
 	 * @synopsis [<file>...] [--tables-to-filter]
 	 */
-	function export( $positional_args, $assoc_args = [] ) {
+	public function export( $positional_args, $assoc_args = [] ) {
 		global $wpdb;
 
 		$database_name = $wpdb->dbname;
