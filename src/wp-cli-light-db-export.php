@@ -119,11 +119,12 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		WP_CLI::log( 'Export the data tables' );
 		WP_CLI::launch_self( sprintf( 'db export - >> %s --tables=%s %s', $file, implode( ',', $table_names ), $additional_params ) );
+
 		
 		if ( !isset( $assoc_args['no-compress'] ) ) {
 			WP_CLI::launch( Utils\esc_cmd( "gzip -9", $file ) );
 
-			$file .= '.gz'
+			$file .= '.gz';
 		}
 
 		WP_CLI::success( "Exported to '%s'", $file );
