@@ -66,12 +66,14 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *
 	 * [--tables-to-filter]
 	 * : List of table names to export without data separated with commas, defaults swp_log,redirection_logs,redirection_404,yop2_poll_logs,wsal_metadata,wsal_occurrences
-	 *
+
+	 * [--no-compress]
+	 * : Allow to export without GZIP compress.gz
 	 *
 	 * ## EXAMPLES
 	 *
 	 *     wp light_db export export.sql --tables-to-filter=postmeta,posts --no-compress
-	 *     wp light_db export export.sql
+	 *     wp light_db export export.sql.gz
 	 *
 	 * @synopsis [<file>...] [--tables-to-filter] [--no-compress]
 	 */
