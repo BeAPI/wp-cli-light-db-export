@@ -126,7 +126,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		
 		if ( !isset( $assoc_args['no-compress'] ) ) {
-			WP_CLI::launch( Utils\esc_cmd( "gzip -9", $file ) );
+			WP_CLI::launch( "gzip -9 $file" );
 
 			$file .= '.gz';
 		}
