@@ -131,7 +131,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 			$file .= '.gz';
 		}
 
-		WP_CLI::success( "Exported to '%s'", $file );
+		WP_CLI::success( sprintf("Exported to '%s'", $file) );
 	}
 
 	/**
