@@ -70,20 +70,19 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 *
 	 * ## EXAMPLES
 	 *
-	 *     wp light_db export export.sql --tables-to-filter=postmeta,posts
+	 *     wp light_db export export.sql --tables-to-filter=postmeta,posts --no-compress
 	 *     wp light_db export export.sql
 	 *
-	 * @synopsis [<file>...] [--tables-to-filter]
+	 * @synopsis [<file>...] [--tables-to-filter] [--no-compress]
 	 */
 	public function export( $positional_args, $assoc_args = [] ) {
 		global $wpdb;
 
-		$database_name = $wpdb->dbname;
-
 		/**
-		 * Filename to export, database name by default
+		 * Filename to export (required)
+		 * 
 		 */
-		$file = sanitize_file_name( empty( $positional_args[0] ) ? $database_name . '.sql' : $positional_args[0] );
+		$file = $positional_args[0];
 
 		/**
 		 * Get the list of tables with no-data
@@ -120,7 +119,14 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		WP_CLI::log( 'Export the data tables' );
 		WP_CLI::launch_self( sprintf( 'db export - >> %s --tables=%s %s', $file, implode( ',', $table_names ), $additional_params ) );
-		WP_CLI::success( 'Export done' );
+		
+		if ( !isset( $assoc_args['no-compress'] ) ) {
+			WP_CLI::launch( Utils\esc_cmd( "gzip -9", $file ) );
+
+			$file .= '.gz'
+		}
+
+		WP_CLI::success( "Exported to '%s'", $file );
 	}
 
 	/**
