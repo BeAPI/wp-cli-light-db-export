@@ -80,6 +80,8 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	public function export( $positional_args, $assoc_args = [] ) {
 		global $wpdb;
 
+		$database_name = $wpdb->dbname;
+
 		/**
 		 * Filename to export (required)
 		 * 
