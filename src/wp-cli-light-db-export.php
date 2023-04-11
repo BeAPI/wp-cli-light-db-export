@@ -53,7 +53,8 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'audit_trail',
 
 		// WPcerber
-		'cerber_traffic'
+		'cerber_traffic',
+		'cerber_log'
 	];
 
 	/**
