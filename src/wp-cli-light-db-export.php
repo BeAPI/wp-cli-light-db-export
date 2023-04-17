@@ -54,7 +54,11 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		// WPcerber
 		'cerber_traffic',
-		'cerber_log'
+		'cerber_log',
+
+		//ThirstyAffiliates
+		'ta_link_clicks_meta',
+		'ta_link_clicks'
 	];
 
 	/**

@@ -17,6 +17,7 @@ By default, it ignores tables for theses plugins :
 * WP Mail Logging
 * WPcerber
 * Yop Polls
+* ThirstyAffiliates
 
 ## Installing
 
