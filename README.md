@@ -18,6 +18,7 @@ By default, it ignores tables for theses plugins :
 * WPcerber
 * Yop Polls
 * ThirstyAffiliates
+* GDPR Cookie Consent
 
 ## Installing
 
