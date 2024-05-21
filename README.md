@@ -8,17 +8,24 @@ Sometimes you need the structure and not the data like log tables or tracking ta
 
 By default, it ignores tables for theses plugins :
 * Broken Link Checker
+* Cavalcade
+* FacetWP
+* GDPR Cookie Consent
+* GravityForms
+* Log HTTP requests
+* Matomo
 * Redirection
 * SearchWP 3.x & 4.x
 * Stream
-* Log HTTP requests
-* WP Security Audit Log
+* TA Links
+* ThirstyAffiliates
+* WP All Export
 * WP Mail Log
 * WP Mail Logging
+* WP Security Audit Log
 * WPcerber
+* Yoast SEO
 * Yop Polls
-* ThirstyAffiliates
-* GDPR Cookie Consent
 
 ## Installing
 
