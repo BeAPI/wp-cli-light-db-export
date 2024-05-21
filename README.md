@@ -32,6 +32,7 @@ By default, it ignores tables for theses plugins :
 Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
 
 Once you've done so, you can install this package with `wp package install BeAPI/wp-cli-light-db-export`
+You also can update your package with `wp package update`
 
 ## Usage
 
