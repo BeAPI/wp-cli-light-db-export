@@ -7,9 +7,12 @@ Allows you to export big databases with all the tables but not all the data.
 Sometimes you need the structure and not the data like log tables or tracking tables.
 
 By default, it ignores tables for theses plugins :
+* Action Scheduler
 * Broken Link Checker
 * Cavalcade
+* Contact Form 7
 * FacetWP
+* FormidableForms
 * GDPR Cookie Consent
 * GravityForms
 * Log HTTP requests
@@ -20,10 +23,13 @@ By default, it ignores tables for theses plugins :
 * TA Links
 * ThirstyAffiliates
 * WP All Export
+* WP Cerber
+* WP Forms
 * WP Mail Log
 * WP Mail Logging
+* WP Rocket
 * WP Security Audit Log
-* WPcerber
+* WooCommerce
 * Yoast SEO
 * Yop Polls
 
@@ -36,11 +42,11 @@ You also can update your package with `wp package update`
 
 ## Usage
 
-Export all without plugins data tables :
+Export everything without the contents of tables containing heavy data or user data :
 
 `wp light_db export export.sql`
 
-Advanced export without plugins data, and without postmeta,posts tables also
+Advanced export without plugins data, AND without postmeta,posts tables also
 
 `wp light_db export export.sql --tables-to-filter=postmeta,posts`
 

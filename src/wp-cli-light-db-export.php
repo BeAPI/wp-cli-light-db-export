@@ -2,7 +2,7 @@
 
 class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	/**
-	 * The tables that are commonly big
+	 * The tables that are commonly big or contained personal data
 	 *
 	 **/
 	private $tables_to_filter = [
@@ -56,6 +56,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		// WPcerber
 		'cerber_traffic',
 		'cerber_log',
+		'_cerber_files',
 
 		// ThirstyAffiliates
 		'ta_link_clicks_meta',
@@ -63,6 +64,7 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		// GDPR Cookie Consent
 		'cli_visitor_details',
+		'cli_cookie_scan_url',
 
 		// FacetWP
 		'facetwp_cache',
@@ -73,6 +75,17 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'gf_entry_meta',
 		'gf_entry_notes',
 		'gf_form_view',
+
+		// FormidableForms
+		'frm_items',
+		'frm_item_metas',
+
+		// CF7
+		'cf7dbplugin_submits',
+
+		// WPforms
+		'wpforms_entries',
+		'wpforms_entry_fields',
 
 		// WP All Export / Import
 		'pmxe_exports',
@@ -136,7 +149,16 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'matomo_tagmanager_tag',
 		'matomo_tagmanager_trigger',
 		'matomo_tagmanager_variable',
-		'matomo_archive_'
+		'matomo_archive_',
+
+		// WP-Rocket
+		'wpr_rocket_cache',
+
+		// ActionScheduler
+		'actionscheduler_logs',
+
+		// WooCommerce
+		'woocommerce_sessions',
 	];
 
 	/**
@@ -145,10 +167,10 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	 * ## OPTIONS
 	 *
 	 * [<file>]
-	 * : List of table names, defaults to all tables in the current site
+	 * : The name of the export file
 	 *
 	 * [--tables-to-filter]
-	 * : List of table names to export without data separated with commas, defaults swp_log,redirection_logs,redirection_404,yop2_poll_logs,wsal_metadata,wsal_occurrences
+	 * : List of table names to export without data separated with commas, this parameter is used to add new tables to be filtered, not to redefine the default list.
 	 *
 	 * [--no-compress]
 	 * : Allow to export without GZIP compress.gz
