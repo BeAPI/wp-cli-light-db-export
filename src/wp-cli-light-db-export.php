@@ -185,7 +185,10 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 	public function export( $positional_args, $assoc_args = [] ) {
 		global $wpdb;
 
-		$database_name = $wpdb->dbname;
+		$database_name = $wpdb->dbname ?? $wpdb->get_var('SELECT DATABASE();'); // fallback to querying the database if `dbname` is not defined
+		if ( empty( $database_name ) ) {
+			\WP_CLI::error( "Couldn't get database's name" );
+		}
 
 		/**
 		 * Filename to export (required)
