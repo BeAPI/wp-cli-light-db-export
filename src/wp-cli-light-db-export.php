@@ -159,6 +159,9 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		// WooCommerce
 		'woocommerce_sessions',
+
+		// BEA Sender
+		'bea_s_',
 	];
 
 	/**
