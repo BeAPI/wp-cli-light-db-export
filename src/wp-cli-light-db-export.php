@@ -230,10 +230,10 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		WP_CLI::log( sprintf( "You are saving %d lines and %s of data", $total_of_lines, size_format( $total_size ) ) );
 		WP_CLI::log( sprintf( 'Export the %d no-data tables', count( $no_data_tables ) ) );
-		WP_CLI::runcommand( sprintf( 'db export - > %s --no-data=true --tables=%s %s', $file, implode( ',', $no_data_tables ), $additional_params ) );
+		WP_CLI::runcommand( sprintf( 'db export --single-transaction --quick --lock-tables=false - > %s --no-data=true --tables=%s %s', $file, implode( ',', $no_data_tables ), $additional_params ) );
 
 		WP_CLI::log( sprintf( 'Export the %d data tables', count( $table_names ) ) );
-		WP_CLI::runcommand( sprintf( 'db export - >> %s --tables=%s %s', $file, implode( ',', $table_names ), $additional_params ) );
+		WP_CLI::runcommand( sprintf( 'db export --single-transaction --quick --lock-tables=false - >> %s --tables=%s %s', $file, implode( ',', $table_names ), $additional_params ) );
 
 		if ( ! isset( $assoc_args['no-compress'] ) ) {
 			WP_CLI::launch( "gzip --force -9 $file", false, true );
