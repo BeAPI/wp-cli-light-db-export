@@ -52,6 +52,10 @@ Advanced export without plugins data, AND without postmeta,posts tables also
 
 With this command will export all the data from your database but no data from all databases postmeta or posts even with the prefixes
 
+### Truncate filtered tables (bash + `mysql` client)
+
+A separate helper script truncates—in place on the server—the tables that a light export would dump **without** row data, using only the `mysql` binary (no WP-CLI). Documentation: **[bin/README.md](bin/README.md)**.
+
 ## Credits
 
 Based on https://github.com/petenelson/wp-cli-size for the table size and row count
