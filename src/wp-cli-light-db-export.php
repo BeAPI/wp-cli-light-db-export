@@ -162,6 +162,10 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 
 		// BEA Sender
 		'bea_s_',
+
+		// Simple History
+		'simple_history_contexts',
+		'simple_history',
 	];
 
 	/**
