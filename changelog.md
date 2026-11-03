@@ -9,9 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [1.1.0] - 2026-11-03
 ### Added
 - Export structure only for Complianz consent statistics (`cmplz_statistics`)
+- Export structure only for the WP Cerber tables holding personal data: `cerber_acl`, `cerber_blocks`, `cerber_lab`, `cerber_lab_ip`, `cerber_qmem` and `cerber_uss` (user sessions with WordPress session tokens). `cerber_lab_net` is matched by `cerber_lab` too
 - Export structure only for Simple History (`simple_history`, `simple_history_contexts`)
 - Export structure only for BEA Sender (`bea_s_*`)
 - `bin/truncate-light-db-tables.sh` helper to truncate the filtered tables in place with the `mysql` client, with a dry-run mode
+
+### Fixed
+- `bin/truncate-light-db-tables.sh` now truncates the Simple History tables too, as the export already filtered them
 
 ### Changed
 - Run both `db export` calls with `--single-transaction --quick --lock-tables=false`, so the export no longer locks tables on the source database

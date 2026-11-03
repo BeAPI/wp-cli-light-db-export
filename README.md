@@ -27,7 +27,7 @@ By default, it exports the structure but not the rows of these tables (matched a
 * Stream
 * TA Links / ThirstyAffiliates: link clicks
 * WP All Export / Import
-* WP Cerber: traffic and logs
+* WP Cerber: traffic, logs, access lists, blocked IPs, Cerber Lab IPs, request memory and user sessions (`cerber_acl`, `cerber_blocks`, `cerber_lab*`, `cerber_qmem`, `cerber_uss`)
 * WP Forms: entries
 * WP Mail Log
 * WP Mail Logging
