@@ -12,6 +12,7 @@ By default, it exports the structure but not the rows of these tables (matched a
 * Broken Link Checker
 * BEA Sender
 * Cavalcade
+* Complianz: consent statistics (`cmplz_statistics`)
 * Contact Form 7: CF7 to Database entries (`cf7dbplugin_submits`)
 * FacetWP: cache and index
 * FormidableForms: entries

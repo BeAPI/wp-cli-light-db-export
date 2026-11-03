@@ -66,6 +66,9 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'cli_visitor_details',
 		'cli_cookie_scan_url',
 
+		// Complianz
+		'cmplz_statistics',
+
 		// FacetWP
 		'facetwp_cache',
 		'facetwp_index',

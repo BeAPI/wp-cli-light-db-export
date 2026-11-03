@@ -71,6 +71,7 @@ DEFAULT_FILTERS=(
 	cerber_traffic cerber_log _cerber_files
 	ta_link_clicks_meta ta_link_clicks
 	cli_visitor_details cli_cookie_scan_url
+	cmplz_statistics
 	facetwp_cache facetwp_index
 	gf_entry gf_entry_meta gf_entry_notes gf_form_view
 	frm_items frm_item_metas
