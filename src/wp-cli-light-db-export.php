@@ -57,6 +57,13 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'cerber_traffic',
 		'cerber_log',
 		'_cerber_files',
+		'cerber_acl',
+		'cerber_blocks',
+		// Also matches cerber_lab_net, a reputation cache without personal data
+		'cerber_lab',
+		'cerber_lab_ip',
+		'cerber_qmem',
+		'cerber_uss',
 
 		// ThirstyAffiliates
 		'ta_link_clicks_meta',
@@ -65,6 +72,9 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		// GDPR Cookie Consent
 		'cli_visitor_details',
 		'cli_cookie_scan_url',
+
+		// Complianz
+		'cmplz_statistics',
 
 		// FacetWP
 		'facetwp_cache',

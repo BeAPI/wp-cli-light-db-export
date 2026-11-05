@@ -69,8 +69,10 @@ DEFAULT_FILTERS=(
 	stream stream_meta
 	audit_trail
 	cerber_traffic cerber_log _cerber_files
+	cerber_acl cerber_blocks cerber_lab cerber_lab_ip cerber_qmem cerber_uss
 	ta_link_clicks_meta ta_link_clicks
 	cli_visitor_details cli_cookie_scan_url
+	cmplz_statistics
 	facetwp_cache facetwp_index
 	gf_entry gf_entry_meta gf_entry_notes gf_form_view
 	frm_items frm_item_metas
@@ -95,6 +97,7 @@ DEFAULT_FILTERS=(
 	actionscheduler_logs
 	woocommerce_sessions
 	bea_s_
+	simple_history simple_history_contexts
 )
 
 FILTERS=( "${DEFAULT_FILTERS[@]}" )
