@@ -17,7 +17,7 @@ By default, it exports the structure but not the rows of these tables (matched a
 * FacetWP: cache and index
 * FormidableForms: entries
 * GDPR Cookie Consent: visitor details and scans
-* GravityForms: entries and form views (`gf_entry*`, `gf_form_view`)
+* GravityForms: entries, form views and draft submissions (`gf_entry*`, `gf_form_view`, `gf_draft_submissions`)
 * Log HTTP requests
 * Matomo
 * Redirection: logs and 404s
@@ -46,7 +46,7 @@ Some tables hold personal data but are kept with their rows, because the site do
 * WooCommerce orders and customers: HPOS tables (`wc_orders`, `wc_order_addresses`, `wc_orders_meta`, `wc_customer_lookup`) and legacy orders in `posts` / `postmeta`
 * Action Scheduler jobs (`actionscheduler_actions`), whose arguments may contain e-mails or order IDs
 * `users`, `usermeta`, `comments`, `commentmeta`, and multisite `signups`
-* Form entries stored as posts (Flamingo, Ninja Forms) and Gravity Forms tables outside `gf_entry*` (`gf_draft_submissions`)
+* Form entries stored as posts (Flamingo, Ninja Forms)
 
 A light export is therefore **not an anonymized export**. When the dump leaves production, anonymize these data after import, or add the tables you do not need with `--tables-to-filter`.
 
