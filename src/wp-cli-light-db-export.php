@@ -85,6 +85,8 @@ class WP_CLI_DB_Light_Export extends WP_CLI_DB_Light_Export_Base {
 		'gf_entry_meta',
 		'gf_entry_notes',
 		'gf_form_view',
+		// Partial entries saved with "Save and Continue": field values and e-mail
+		'gf_draft_submissions',
 
 		// FormidableForms
 		'frm_items',

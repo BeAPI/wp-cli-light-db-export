@@ -74,7 +74,7 @@ DEFAULT_FILTERS=(
 	cli_visitor_details cli_cookie_scan_url
 	cmplz_statistics
 	facetwp_cache facetwp_index
-	gf_entry gf_entry_meta gf_entry_notes gf_form_view
+	gf_entry gf_entry_meta gf_entry_notes gf_form_view gf_draft_submissions
 	frm_items frm_item_metas
 	cf7dbplugin_submits
 	wpforms_entries wpforms_entry_fields
